@@ -4,7 +4,7 @@
 @import "grid"
 
 ::placeholder
-	color: #666
+	color: #80868D
 
 ::selection
 	background-color: #1B2B3D
@@ -43,6 +43,135 @@ body
 b, strong
 	font-weight: bold
 
+a
+	text-decoration: none
+	outline: none
+	cursor: pointer
+	color: $text
 
+//HEADER
+
+.header
+	width: 100%
+	&__wrapper
+	&-top
+		display: flex
+		align-items: center
+		padding-top: 35px
+		&__logo
+			margin-right: 80px
+
+.menu
+	> ul
+		display: flex
+		list-style-type: none
+		padding: 0
+		> li
+			margin-right: 12px
+			margin-left: 12px
+			> a
+				text-decoration: none
+				outline: none
+				cursor: pointer
+				color: #000000
+				font-weight: 500
+				font-size: 15px
+
+//MAIN
+
+.main
+	&__image
+		position: absolute
+		z-index: -1
+		top: 0
+		width: 100%
+	&-banner //BANNER
+		position: relative
+		bottom: 0
+		&__wrapper
+		&__text
+			position: relative
+			width: 520px
+			&-title
+				> h1
+					color: $text
+					font-size: 90px
+					font-weight: 900
+					line-height: 90px
+			&-desc
+				position: absolute
+				bottom: -15px
+				right: -40px
+				color: $text
+				> h3
+					font-size: 30px
+					font-weight: bold
+					line-height: 15px
+				> p
+					font-size: 18px
+					font-weight: 500
+		&__phone
+			margin-top: 50px
+			&-input
+				background: rgba(9, 19, 33, 0.0638304)
+				border: 0
+				border-radius: 10px
+				height: 60px
+				width: 270px
+				padding: 20px
+				font-weight: 500
+				font-size: 16px
+			&-button
+				background: #833E45
+				border-radius: 0px 10px 10px 0px
+				border: 0
+				height: 60px
+				font-weight: 500
+				font-size: 16px
+				color: $white
+				width: 167px
+				position: relative
+				left: -23px
+				top: -1px
+				cursor: pointer
+			&-desc
+				margin-top: 10px
+				font-weight: normal
+				font-size: 11px
+				line-height: 11px
+				color: #8D9CAE
+				> a
+					color: #1B2B3D
+					font-weight: bold
+					font-size: 13px
+					line-height: 12px
+					text-decoration: none
+					outline: none
+	&-pluses
+		position: relative
+		&__wrapper
+			> ul
+				> li
+					list-style-type: none
+					position: relative
+					display: inline-block
+					width: 257px
+					&::before
+						position: absolute
+						content: "+"
+						font-weight: bold
+						font-size: 21px
+						line-height: 24px
+						color: #833E45
+						left: -15px
+						top: -4px
+					> h4
+						font-weight: 500
+						font-size: 16px
+					> p
+						font-weight: normal
+						font-size: 14px
+						width: 200px
+						line-height: 17px
 
 @import "media" // Always at the end
