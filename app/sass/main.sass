@@ -51,6 +51,32 @@ a
 	outline: none
 	cursor: pointer
 
+.endosfer-title
+	display: flex
+	align-items: center
+	> h2
+		margin-left: 20px
+		font-weight: bold
+		font-size: 18px
+		line-height: 28px
+		padding-top: 5px
+.endosfer-desc
+	margin-top: 25px
+	font-weight: normal
+	font-size: 14px
+	opacity: 0.7
+	width: 315px
+
+.quality-item
+	width: 230px
+	margin-top: 20px
+	margin-bottom: 20px
+	> svg
+		margin-bottom: 20px
+	> p
+		font-size: 14px
+		line-height: 22px
+
 //HEADER
 
 .header
@@ -66,6 +92,7 @@ a
 
 .menu
 	margin-left: 80px
+	display: flex
 	> ul
 		display: flex
 		list-style-type: none
@@ -80,11 +107,82 @@ a
 				color: #000000
 				font-weight: 500
 				font-size: 15px
+	&__phone
+		display: flex
+		justify-content: center
+		height: 150px
+		display: none
+		&__wrapper
+			display: flex
+			flex-direction: column
+			position: relative
+			width: 100px
+		&-nav
+			position: relative
+			margin-top: 10px
+			transition: 0.5s
+			opacity: 0
+			> ul
+				border-radius: 10px
+				list-style-type: none
+				margin: 0
+				padding: 0
+				display: flex
+				flex-direction: column
+				text-align: end
+				margin-top: 10px
+				> li
+					margin-top: 5px
+					margin-bottom: 5px
+					> a
+						display: inline-block
+						text-decoration: none
+						outline: none
+						cursor: pointer
+						color: $black
+						font-weight: 500
+						font-size: 15px
+		&-nav_active
+			opacity: 1
+	&-btn
+		display: block
+		height: 16px
+		position: relative
+		margin-left: 75px
+		> span
+			position: absolute
+			top: 50%
+			margin-top: -1.5px
+			width: 24px
+			height: 3px
+			background-color: $black
+			transition: 0.2s
+			&::after, &::before
+				position: absolute
+				top: 50%
+				margin-top: -1.5px
+				width: 24px
+				height: 3px
+				background-color: $black
+				content: ''
+				display: block
+				transition: 0.3s
+			&::before
+				transform: translateY(-7px)
+			&::after
+				transform: translateY(7px)
+	&-btn_active
+		> span
+			height: 0
+			&::after
+				transform: rotate(45deg)
+			&::before
+				transform: rotate(-45deg)
 
 //MAIN
 
 .main
-	&-banner //BANNER
+	&-banner	//BANNER
 		position: relative
 		background-image: url("../img/banner.png")
 		background-repeat: no-repeat
@@ -155,6 +253,7 @@ a
 					text-decoration: none
 					outline: none
 					cursor: pointer
+
 	&-pluses	// PLUSES
 		position: relative
 		margin-top: 50px
@@ -187,6 +286,7 @@ a
 						font-size: 14px
 						width: 200px
 						line-height: 17px
+
 	&-endosfer	//ENDOSFER
 		margin-bottom: 80px
 		&__text
@@ -212,33 +312,68 @@ a
 			margin-top: 35px
 		&__celul
 			grid-area: celul
+			padding-top: 40px
 		&__siluet
 			grid-area: siluet
+			padding-top: 40px
 		&__lift
 			grid-area: lift
+			padding-top: 40px
 		&__image
 			grid-area: image
 		&__weight
 			grid-area: weight
+			padding-top: 40px
 		&__traning
 			grid-area: traning
+			padding-top: 40px
 		&__comfort
 			grid-area: comfort
+			padding-top: 40px
 
-.endosfer-title
-	display: flex
-	align-items: center
-	> h2
-		margin-left: 20px
-		font-weight: bold
-		font-size: 18px
-		line-height: 28px
-		padding-top: 5px
-.endosfer-desc
-	margin-top: 25px
-	font-weight: normal
-	font-size: 14px
-	opacity: 0.7
-	width: 315px
+	&-microvibr //MICROVIBR
+		margin-bottom: 60px
+		&__title
+			> h3
+				font-weight: 900
+				font-size: 30px
+				line-height: 45px
+				color: $title
+		&__wrapper
+			display: grid
+			grid-template: 1fr / repeat(2, 1fr)
+			grid-column-gap: 30px
+		&__video
+			&__wrapper
+				margin-top: 50px
+				> video
+					width: 575px
+					border-radius: 10px
+					padding: 0
+					margin: 0
+					display: block
+					outline: none
+		&__quality
+			&__wrapper
+				margin-top: 35px
+				display: grid
+				grid-template: 140px 140px 100px / repeat(2, 1fr)
+				justify-items: center
+			&-sensor
+			&-support
+			&-tech
+			&-certif
+			&-button
+				justify-self: start
+				padding-left: 15px
+				> button
+					padding: 18px 47px
+					background: #833E45
+					border: 0
+					color: $white
+					font-weight: 500
+					font-size: 20px
+					line-height: 24px
+					border-radius: 10px
 
 @import "media" // Always at the end
